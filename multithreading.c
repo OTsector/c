@@ -20,7 +20,6 @@ int main(int argc, char** argv) {
 	int result_code;
 	unsigned index;
 
-	// create all threads one by one
 	for (index = 0; index < NUM_THREADS; ++index) {
 		thread_args[ index ] = index;
 		printf("In main: creating thread %d\n", index);
@@ -28,7 +27,6 @@ int main(int argc, char** argv) {
 		assert(!result_code);
 	}
 
-	// wait for each thread to complete
 	for (index = 0; index < NUM_THREADS; ++index) {
 		// block until thread 'index' completes
 		result_code = pthread_join(threads[index], NULL);
