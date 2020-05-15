@@ -47,9 +47,9 @@ void checkerPlatform(char *input, char *passwd) {
 int main(int argc, char *argv[]) {
 
 	char *data="grihf@ise!njewo";
-//             |||||||||||||||
-//             000000000011111
-//             012345678901234
+//              |||||||||||||||
+//              000000000011111
+//              012345678901234
 
 	int parser[]={13, 1, 14, 10, 0};
 //                |   |  |   |   |
