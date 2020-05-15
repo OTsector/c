@@ -52,8 +52,8 @@ int main(int argc, char *argv[]) {
 //             012345678901234
 
 	int parser[]={13, 1, 14, 10, 0};
-//               |   |  |   |   |
-//               w   r  o   n   g
+//                |   |  |   |   |
+//                w   r  o   n   g
 
 	char *passwd=(char*)malloc(sizeof(char)*sizeof(parser)/sizeof(int));
 	for(int a=0; a<sizeof(parser)/sizeof(int); a++) {
