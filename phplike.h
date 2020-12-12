@@ -63,7 +63,7 @@ int substr_count(char *haystack, char *needle) {
 }
 char *strtolower(char *input) {
 	char *output=(char*)malloc(sizeof(input)+1);
-	for(int i=0; input[i] != '\0'; i++)
+	for(int i=0; input[i] != '\0'; i++) {
 		if(input[i] >= 65 && input[i] <= 90)
 			output[i]=input[i]+32;
 		else
@@ -74,7 +74,7 @@ char *strtolower(char *input) {
 
 char *strtoupper(char *input) {
 	char *output=(char*)malloc(sizeof(input)+1);
-	for(int i=0; input[i] != '\0'; i++)
+	for(int i=0; input[i] != '\0'; i++) {
 		if(input[i] >= 97 && input[i] <= 122)
 			output[i]=input[i]-32;
 		else
