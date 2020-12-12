@@ -4,17 +4,17 @@
 
 char *substr(char *text, int start, int end) {
 	end++;
-	if(start<0 || start>strlen(text)||start>end)
+	if(start<0 || start>strlen(text) || start>end)
 		return (char*)"";
 	char *output=malloc(sizeof(char));
-	for(int i=0; input[i] != '\0'; i++) {
+	for(int i=start; i<end; i++)
 		*(output+strlen(output))=*(text+i);
 	*(output+end)='\0';
 	return output;
 }
 
 int strpos(char *haystack, char *needle) {
-	for(int i=0; input[i] != '\0'; i++)
+	for(int i=0; haystack[i] != '\0'; i++)
 		if(strcmp(substr(haystack, (i+1), i+strlen(needle)), needle) == 0)
 			return (i+1);
 	return 0;
