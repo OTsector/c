@@ -32,7 +32,6 @@ char *str_replace(char *str, char *replaceable, char *substitude) {
 	int i, cnt = 0;
 	int substitudelen = strlen(substitude);
 	int replaceablelen = strlen(replaceable);
-
 	for (i = 0; *(str+i) != '\0'; i++) {
 		if (strstr(&*(str+i), replaceable) == &*(str+i)) {
 			cnt++;
@@ -40,7 +39,6 @@ char *str_replace(char *str, char *replaceable, char *substitude) {
 		}
 	} 
 	output = (char *)malloc(i + cnt * (substitudelen - replaceablelen) + 1); 
-
 	i = 0;
 	while (*str) {
 		if (strstr(str, replaceable) == str) {
@@ -65,7 +63,7 @@ int substr_count(char *haystack, char *needle) {
 }
 char *strtolower(char *input) {
 	char *output=(char*)malloc(sizeof(input)+1);
-	for(int i=0; i<strlen(input); i++) {
+	for(int i=0; input[i] != '\0'; i++)
 		if(input[i] >= 65 && input[i] <= 90)
 			output[i]=input[i]+32;
 		else
@@ -76,7 +74,7 @@ char *strtolower(char *input) {
 
 char *strtoupper(char *input) {
 	char *output=(char*)malloc(sizeof(input)+1);
-	for(int i=0; i<strlen(input); i++) {
+	for(int i=0; input[i] != '\0'; i++)
 		if(input[i] >= 97 && input[i] <= 122)
 			output[i]=input[i]-32;
 		else
