@@ -3,11 +3,10 @@
 #include <stdlib.h>
 
 char *substr(char *text, int start, int end) {
-	end++;
-	if(start<0 || start>strlen(text) || start>end)
+	if(start<0 || start>strlen(text) || start>=end)
 		return (char*)"";
 	char *output=malloc(sizeof(char));
-	for(int i=start; i<end; i++)
+	for(int i=start; i<=end; i++)
 		*(output+strlen(output))=*(text+i);
 	*(output+end)='\0';
 	return output;
