@@ -5,7 +5,7 @@
 char *substr(char *text, int start, int end) {
 	if(start<0 || start>strlen(text) || start>=end)
 		return (char*)"";
-	char *output=malloc(sizeof(char));
+	char *output=malloc(sizeof(char)*(end-start)+1);
 	for(int i=start; i<=end; i++)
 		*(output+strlen(output))=*(text+i);
 	*(output+end)='\0';
@@ -37,7 +37,7 @@ char *str_replace(char *str, char *replaceable, char *substitude) {
 			i += replaceablelen - 1;
 		}
 	} 
-	output = (char *)malloc(i + cnt * (substitudelen - replaceablelen) + 1); 
+	output = (char *)malloc(i+cnt*(substitudelen-replaceablelen)+1); 
 	i = 0;
 	while (*str) {
 		if (strstr(str, replaceable) == str) {
