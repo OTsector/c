@@ -81,3 +81,25 @@ char *strtoupper(char *input) {
 	}
 	return output;
 }
+
+char *bin2hex(char *input) {
+	char *output=(char*)malloc(sizeof(input)*2+1);
+	int o=0;
+	for(int i=0; input[i] != '\0'; i++) {
+		sprintf((char*)(output+o), "%02x", input[i]);
+		o+=2;
+	}
+	return output;
+}
+
+char *hex2bin(char *input) {
+	char *output=(char*)malloc(sizeof(input)/2+1);
+	for(int i=0; i<strlen(input); i+=2) {
+		char buf[3];
+		sprintf(buf, "%c%c", input[i], input[i+1]);
+		sscanf(buf, "%02x", buf);
+		if (i == 0) strcpy(output, buf);
+		else strcat(output, buf);
+	}
+	return output;
+}
