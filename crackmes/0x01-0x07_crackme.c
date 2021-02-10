@@ -18,8 +18,8 @@
 #include <string.h>
 
 void output(int end) {
-	char *g="Access Granted";
-	char *b="Access Denied";
+	const char *g="Access Granted";
+	const char *b="Access Denied";
 	if(end==0) {
 		puts(g); exit(0);
 	} else {
@@ -46,14 +46,14 @@ void checkerPlatform(char *input, char *passwd) {
 
 int main(int argc, char *argv[]) {
 
-	char *data="grihf@ise!njewo";
-//              |||||||||||||||
-//              000000000011111
-//              012345678901234
+	const char *data="grihf@ise!njewo";
+//	                  |||||||||||||||
+//	                  000000000011111
+//	                  012345678901234
 
 	int parser[]={13, 1, 14, 10, 0};
-//                |   |  |   |   |
-//                w   r  o   n   g
+//	              |   |  |   |   |
+//	              w   r  o   n   g
 
 	char *passwd=(char*)malloc(sizeof(char)*sizeof(parser)/sizeof(int));
 	for(int a=0; a<sizeof(parser)/sizeof(int); a++) {
